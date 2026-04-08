@@ -58,3 +58,58 @@ document.querySelector('#app').innerHTML = `
 `
 
 setupCounter(document.querySelector('#counter'))
+
+//CONTACT SCRIPTS
+const form = document.getElementById('contactForm');
+ 
+    const fields = {
+      firstName: { id: 'firstName', errorId: 'firstNameError', validate: v => v.trim() !== '' },
+      lastName:  { id: 'lastName',  errorId: 'lastNameError',  validate: v => v.trim() !== '' },
+      email:     { id: 'email',     errorId: 'emailError',     validate: v => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v.trim()) },
+      message:   { id: 'message',   errorId: 'messageError',   validate: v => v.trim().length >= 5 },
+    };
+ 
+    function showError(field, show) {
+      const el = document.getElementById(field.errorId);
+      const input = document.getElementById(field.id);
+      el.classList.toggle('hidden', !show);
+      input.style.borderColor = show ? '#f87171' : '';
+    }
+ 
+    // Live validation on blur
+    Object.values(fields).forEach(field => {
+      const input = document.getElementById(field.id);
+      input.addEventListener('blur', () => {
+        const valid = field.validate(input.value);
+        showError(field, !valid);
+        if (valid) input.style.borderColor = '#60a5fa';
+      });
+      input.addEventListener('input', () => {
+        if (!document.getElementById(field.errorId).classList.contains('hidden')) {
+          if (field.validate(input.value)) showError(field, false);
+        }
+      });
+    });
+ 
+    form.addEventListener('submit', e => {
+      e.preventDefault();
+      let valid = true;
+ 
+      Object.values(fields).forEach(field => {
+        const input = document.getElementById(field.id);
+        const ok = field.validate(input.value);
+        showError(field, !ok);
+        if (!ok) valid = false;
+      });
+ 
+      if (valid) {
+        document.getElementById('successMsg').classList.remove('hidden');
+        form.reset();
+        Object.values(fields).forEach(f => {
+          document.getElementById(f.id).style.borderColor = '';
+        });
+        setTimeout(() => {
+          document.getElementById('successMsg').classList.add('hidden');
+        }, 4000);
+      }
+    });
