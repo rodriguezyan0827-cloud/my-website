@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,36 +11,78 @@
 <body class="bg-#f2f2f2 font-montserrat leading-1.6 mx-6 sm:mx-6 xl:mx-20 lg:mx-16 md:mx-14 pb-[50vh]">
 <!---NAV-BAR-->
 <header>
-<nav class="mx-auto max-w-5xl">
-  <ul class="flex text-xs lg:text-xl cursor-pointer uppercase  content-between gap-6 lg:gap-12 sm:py-4 sm:px-10 py-2">
+<nav class="w-full bg-white border-b border-gray-200">
+  <div class="flex items-center justify-between px-4 h-14">
+
     <span class="text-blue-700 font-boldonse text-xs lg:text-lg font-bold uppercase me-auto hover:underline [text-shadow:1px_1px_0px_#9c9994,2px_2px_0px_#9c9994,3px_3px_0px_#9c9994,4px_4px_0px_#f2f2f2,5px_5px_10px_rgba(0,0,0,0.3)]"><a href="index.html">B.R</a></span>
-    <li><a class="hover:underline transition-colors" href="">About</a></li>
-    <li><a class="hover:underline" href="">Case Studies</a></li>
-    <li><a class="hover:underline" href="contact.html">Contacts</a></li>
-  </ul> 
+
+    <!-- Desktop links -->
+    <div class="hidden md:flex items-center gap-1">
+      <a href="#" class="px-3 py-1.5 text-sm text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-900">About</a>
+      <a href="#" class="px-3 py-1.5 text-sm text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-900">Portfolio</a>
+      <a href="#" class="px-3 py-1.5 text-sm text-gray-500 rounded-lg hover:bg-gray-100 hover:text-gray-900">Contacts</a>
+    </div>
+
+    <!-- Hamburger button -->
+    <button id="menuBtn" aria-label="Toggle menu" aria-expanded="false"
+      class="md:hidden flex flex-col justify-center gap-1.5 w-9 h-9 p-2 rounded-lg hover:bg-gray-100">
+      <span class="block w-full h-px bg-gray-800 rounded"></span>
+      <span class="block w-full h-px bg-gray-800 rounded"></span>
+      <span class="block w-full h-px bg-gray-800 rounded"></span>
+    </button>
+  </div>
+
+  <!-- Mobile dropdown -->
+  <div id="dropdown" class="hidden flex-col border-t border-gray-200 md:hidden">
+    <a href="#" class="px-4 py-3 text-sm text-gray-800 border-b border-gray-100 hover:bg-gray-50">Home</a>
+    <a href="#" class="px-4 py-3 text-sm text-gray-800 border-b border-gray-100 hover:bg-gray-50">About</a>
+    <a href="#" class="px-4 py-3 text-sm text-gray-800 border-b border-gray-100 hover:bg-gray-50">Portfolio</a>
+    <a href="#" class="px-4 py-3 text-sm text-gray-800 hover:bg-gray-50">Contacts</a>
+  </div>
 </nav>
 </header>
+
 <!---HERO SECTION-->
-<section class="pt-8 lg:pt-16 pb-32 mx-auto max-w-5xl">
-  <h1 class="font-normal lg:font-normal text-gray-700 uppercase tracking-widest text-sm md:text-xl lg:text-2xl pt-2 pb-2 text-shadow-lg">SEO Specialist Philippines</h1>
+<section class="mx-auto max-w-5xl flex h-screen items-center justify-center">
+  <h1 class="hidden sm:block font-normal lg:font-normal text-gray-700 uppercase tracking-widest text-xs md:text-xl lg:text-2xl pt-2 pb-2 text-shadow-lg">SEO Specialist Philippines</h1>
   <div class="md:grid grid-cols-2 gap-2">
-      <img class="rounded-3xl" src="/public/3D-animated-bertryan.png" alt="3D-animated-bertryan" width="1024" height="1024">
-      <div>
-        <span class="font-boldonse text-black text-3xl font-extrabold pt-2 pb-2 sm:text-6xl md:text-6xl xl:text-8xl lg:leading-26 text-shadow-lg">Hi, I'm Ryan
+      <img class="sm:block hidden" src="/public/3D-animated-bertryan.png" alt="3D-animated-bertryan" width="1024" height="1024">
+      <div class="text-center justify-center">
+        <span class="font-medium md:font-boldonse lg:font-extrabold pt-2 pb-2 text-xl/3 md:text-6xl xl:text-8xl md:leading-26 text-shadow-lg">Hi there!👋
+        </span><br>
+        <span class="font-medium md:font-boldonse lg:font-extrabold pt-2 pb-2 text-xl/3 md:text-6xl xl:text-8xl md:leading-26 text-shadow-lg">I'm Bert, a Content and Technical SEO Specialist
         </span>
-        <br><span class="text-blue-800 uppercase font-boldonse font-bold md:font-boldonse-regular pt-2 pb-2 text-3xl md:text-5xl lg:text-7xl xl:text-7xl lg:leading-26 text-shadow-lg">Technical SEO Specialist</span>
+          <hr class="border-gray-300">
+        <p class="text-blue-800 pt-0 pb-2 text-lg/5 text-shadow-lg md:font-boldonse md:text-5xl lg:text-7xl xl:text-7xl lg:leading-26 ">I enhance online visibility by combining content strategy with technical SEO expertise.</p>
       </div>    
   </div>
-    <h2 class="font-bold lg:font-bold text-blue-400 uppercase tracking-wide text-sm md:text-xl lg:text-2xl xl:text-4xl pt-2 xl:pt-0 text-shadow-lg">Mission Statement</h2>
-    <h3 class="font-boldonse text-black uppercase font-extrabold pb-2 text-lg md:text-xl lg:text-3xl xl:text-5xl lg:leading-10 xl:leading-26 text-shadow-lg">What I Believe In</h3>
-    <p class=" text-gray-700 text-sm md:text-xl lg:text-2xl pt-3 pb-3 px-3  lg:font-normal">My mission is to build technically sound websites that search engines can crawl, understand, and trust effortlessly. I believe true SEO success starts with a strong foundation such as site speed, clean architecture, flawless indexing and combined with content that serves real user intent. Every optimization I implement is driven by data, precision, and long-term sustainability, not shortcuts. When technical excellence meets real value, consistent top rankings follow.</p>
+<svg class="size-6 animate-bounce ...">Scroll Down
+</svg>
+</section>
+
+
+  <!------ABOUT ME----->
+  <section id="about-me">
+    <h2 class="text-center justify-center font-boldonse text-black uppercase font-extrabold pt-4 pb-2 text-xs md:text-xl lg:text-5xl lg:leading-26 ">About Me</h2>
+      <hr class="border-gray-300 mb-3">
+      <img class="block mx-auto ring-1 ring-gray-300 size-24 rounded-full object-cover " src="/myPicture.png">
+      <p class="text-center text-gray-700 text-sm/6 md:text-lg lg:text-xl pt-3 pb-3 px-3  lg:font-normal">"I am passionate about improving website performance and visibility by solving complex SEO challenges"</p>
+      <hr class="border-gray-300">
+      <p class="text-gray-700 text-sm/6 md:text-lg lg:text-xl pt-3 pb-3 px-3  lg:font-normal">I have more than 3 years of hands-on experience in Technical and On-Page SEO, working across diverse industries such as legal services, healthcare, and construction. Each field has sharpened my ability to adapt strategies, solve complex site issues, and drive meaningful organic growth.</p>
+      <h3 class="text-center justify-center font-bold lg:font-bold text-blue-400 uppercase tracking-wide text-xs md:text-xl lg:text-2xl xl:text-4xl pt-2 xl:pt-0 text-shadow-lg">Why I Chose to Become a Technical SEO Specialist</h3>
+      <p class="text-gray-700 text-sm/6 md:text-lg lg:text-xl pt-3 pb-3 px-3  lg:font-normal">My journey did not begin in marketing. At first, I envisioned a traditional tech career since I have a Bachelor's degree in Computer Science, but along the way, I discovered something that truly sparked my interest, the blend of creativity and logic. This is where SEO stood out.<br><br>With my background in computer science, stepping into Technical SEO felt like a natural evolution. I already had a solid foundation in understanding website structure, HTML, page speed optimization, and crawlability, all of which are critical elements that influence how search engines rank a site.<br><br>Today, I combine technical expertise with strategic thinking to help websites not just rank, but perform at their best.</p>
+    <h3 class="text-center justify-center font-bold lg:font-bold text-blue-400 uppercase tracking-wide text-xs md:text-xl lg:text-2xl xl:text-4xl pt-2 xl:pt-0 text-shadow-lg">My Mission</h3>
+  
+    <p class="text-gray-700 text-sm/6 md:text-lg lg:text-xl pt-3 pb-3 px-3  lg:font-normal">My mission is to build technically sound websites that search engines can crawl, understand, and trust effortlessly. I believe true SEO success starts with a strong foundation such as site speed, clean architecture, flawless indexing and combined with content that serves real user intent. Every optimization I implement is driven by data, precision, and long-term sustainability, not shortcuts. When technical excellence meets real value, consistent top rankings follow.</p>
       <div class="pt-3 pb-3">
         <button class="font-medium text-black uppercase text-xs cursor-pointer 
         bg-amber-300 backdrop-blur-3xl border border-white/30 rounded-3xl inset-shadow-sm inset-shadow-white/80 hover:bg-amber-700/20 transition-colors p-2 lg:p-3 mr-4 md:mr-5 lg:text-lg rounded-3xl shadow-xl" >Work with me</button>
         <button class="font-medium text-black uppercase text-xs cursor-pointer border-2 
         bg-blue-300 backdrop-blur-3xl border border-white/30 rounded-3xl inset-shadow-sm inset-shadow-white/70 hover:bg-amber-700/20 transition-colors p-2 lg:p-3 lg:text-lg rounded-3xl shadow-xl">View my works</button>
-      </div>          
-</section>
+      </div>
+  </section>
+                
+
 <!--PORTFOLIO SECTION-->
 <section class="mx-auto max-w-5xl">
 <h2 class="font-bold lg:font-bold text-blue-400 uppercase tracking-wide text-sm md:text-xl lg:text-2xl xl:text-4xl pt-2 xl:pt-0 text-shadow-lg">Recent Works</h2>

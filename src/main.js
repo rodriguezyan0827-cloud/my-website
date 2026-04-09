@@ -113,3 +113,15 @@ const form = document.getElementById('contactForm');
         }, 4000);
       }
     });
+
+    //NAVBAR && BUTTONS
+    const btn = document.getElementById('menuBtn');
+    const dropdown = document.getElementById('dropdown');
+    btn.addEventListener('click', () => {
+    const isOpen = dropdown.classList.toggle('hidden');
+    dropdown.classList.toggle('flex', !isOpen);
+    btn.setAttribute('aria-expanded', String(!isOpen));
+  });
+
+
+ 
